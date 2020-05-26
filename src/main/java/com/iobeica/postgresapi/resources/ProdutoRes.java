@@ -26,7 +26,7 @@ public class ProdutoRes {
 	@GetMapping("/all")
 	public ResponseEntity<?> getAll(){
 		try {
-			return ResponseEntity.status(HttpStatus.OK).body("Testando findAll");
+			return ResponseEntity.status(HttpStatus.OK).body(repo.findAll());
 		} catch (Exception e) {
 			throw  e;
 		}
