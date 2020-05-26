@@ -82,5 +82,23 @@ public class ProdutoRes {
 			throw e;
 		}
 	}
+	
+	@PostMapping("/delete")
+	public void deleteProduto(@RequestBody Produto produto){
+		try {
+			repo.delete(produto);
+		} catch (Exception e) {
+			throw e;
+		}
+	}
+	
+	@RequestMapping("/update")
+	public Produto updateProduto(@RequestBody Produto produto) {
+		try {
+			return repo.save(produto);
+		} catch (Exception e) {
+			throw e;
+		}
+	}
 
 }
